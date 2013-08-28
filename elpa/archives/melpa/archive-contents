@@ -28,7 +28,7 @@
 		 [(20111231 345)
 		  nil "Unfold CSS-selector-like expressions to markup [github]" single])
  (zenburn-theme .
-		[(20130827 2313)
+		[(20130828 1532)
 		 nil "A low contrast color theme for Emacs. [github]" single])
  (zen-and-art-theme .
 		    [(20120622 937)
@@ -89,7 +89,7 @@
 		  [(20130401 229)
 		   nil "show whole days of world-time diffs [github]" single])
  (workgroups2 .
-	      [(20130828 1133)
+	      [(20130828 2316)
 	       nil "New workspaces for Emacs [github]" tar])
  (workgroups .
 	     [(20110724 1825)
@@ -508,7 +508,7 @@
 			(24)))
 		      "Tern Completion by auto-complete.el [github]" single])
  (tern .
-       [(20130825 1457)
+       [(20130828 1616)
 	((json
 	  (1 2))
 	 (emacs
@@ -977,6 +977,9 @@
  (rvm .
       [(20130521 902)
        nil "Emacs integration for rvm [github]" single])
+ (rust-mode .
+	    [(20130827 1248)
+	     nil "A major emacs mode for editing Rust source code [github]" single])
  (ruby-tools .
 	     [(20121008 1851)
 	      nil "Collection of handy functions for ruby-mode. [github]" tar])
@@ -1289,7 +1292,7 @@
 	   [(20130821 1454)
 	    nil "Major mode for Pig files [github]" single])
  (php-mode .
-	   [(20130826 1135)
+	   [(20130828 1434)
 	    nil "Major mode for editing PHP code [github]" single])
  (php-eldoc .
 	    [(20130328 1526)
@@ -1510,7 +1513,7 @@
 	      (0 1)))
 	    "Blog from Org mode to wordpress [github]" tar])
  (org-trello .
-	     [(20130825 1535)
+	     [(20130828 1305)
 	      ((org
 		(8 0 7))
 	       (dash
@@ -1524,7 +1527,9 @@
 	       (elnode
 		(0 9 9 7 6))
 	       (esxml
-		(0 3 0)))
+		(0 3 0))
+	       (s
+		(1 7 0)))
 	      "Org minor mode to synchronize with trello [github]" tar])
  (org-toodledo .
 	       [(20130823 1051)
@@ -1634,7 +1639,7 @@
 	       [(20120202 2334)
 		nil "Org-mode and Cua mode compatibility layer [github]" single])
  (org-context .
-	      [(20130818 1431)
+	      [(20130828 1842)
 	       ((org
 		 (7)))
 	       "Contextual capture and agenda commands for Org-mode [github]" single])
@@ -2058,7 +2063,7 @@
 			       [(20130730 1032)
 				nil "Advice for magit-log-edit-commit [github]" single])
  (magit .
-	[(20130828 508)
+	[(20130828 654)
 	 ((cl-lib
 	   (0 3))
 	  (git-commit-mode
@@ -2452,7 +2457,7 @@
 	    [(20130305 127)
 	     nil "Run a MongoDB shell process in a buffer [github]" single])
  (indent-guide .
-	       [(20130828 1405)
+	       [(20130828 2205)
 		nil "show vertical lines to guide indentation [github]" single])
  (import-popwin .
 		[(20130820 1129)
@@ -2794,7 +2799,7 @@
 	    (20120509)))
 	  "helm-sources and some utilities for GNU R. [github]" single])
  (helm .
-       [(20130828 730)
+       [(20130828 1450)
 	nil "Helm is an Emacs incremental and narrowing framework [github]" tar])
  (header2 .
 	  [(20130723 2321)
@@ -3269,7 +3274,7 @@
 		 (0 1)))
 	       "Flymake support for css using csslint [github]" single])
  (flymake-coffee .
-		 [(20130822 2035)
+		 [(20130828 1126)
 		  ((flymake-easy
 		    (0 1)))
 		  "A flymake handler for coffee script [github]" single])
@@ -3445,7 +3450,7 @@
 	       [(20121109 238)
 		nil "increment/decrement numbers like in vim [github]" single])
  (evil-nerd-commenter .
-		      [(20130818 2136)
+		      [(20130828 2233)
 		       nil "Comment/uncomment lines efficiently. Like Nerd Commenter in Vim [github]" tar])
  (evil-leader .
 	      [(20130730 1744)
@@ -3531,10 +3536,10 @@
 		   [(20121009 734)
 		    nil "The simplest unit test framework in the world [wiki]" single])
  (erlang .
-	 [(20130819 921)
+	 [(20130827 1016)
 	  nil "Erlang major mode [github]" tar])
  (ergoemacs-mode .
-		 [(20130827 1917)
+		 [(20130828 953)
 		  ((org-cua-dwim
 		    (0 5)))
 		  "Emacs mode based on common modern software interface and ergonomics. [github]" tar])
@@ -4049,7 +4054,7 @@
 	   [(20130424 1528)
 	    nil "Major mode for editing comma/char separated values [github]" single])
  (css-eldoc .
-	    [(20130825 2043)
+	    [(20130828 1736)
 	     nil "an eldoc-mode plugin for CSS source code [github]" tar])
  (csharp-mode .
 	      [(20130824 1200)
@@ -4238,8 +4243,8 @@
        [(20130818 1344)
 	nil "Emacs dependency management made easy [github]" tar])
  (capture .
-	  [(20130710 942)
-	   nil "easy screencasting using the avconv program [github]" tar])
+	  [(20130828 2044)
+	   nil "screencasting with \"avconv\" or \"ffmpeg\" [github]" tar])
  (caml .
        [(20130322 1319)
 	nil "No description available. [svn]" tar])
@@ -4649,9 +4654,6 @@
  (abc-mode .
 	   [(20130607 917)
 	    nil "Major mode for editing abc music files [github]" single])
- (rust-mode .
-	    [(20130827 1248)
-	     nil "A major emacs mode for editing Rust source code [github]" single])
  (js-comint .
 	    [(20080530 957)
 	     nil "Run javascript in an inferior process window. [svn]" single]))
