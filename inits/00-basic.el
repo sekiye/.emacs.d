@@ -1,0 +1,11 @@
+(display-time)
+(line-number-mode 1)
+(column-number-mode 1)
+
+(defun other-window-or-split ()
+  (interactive)
+  (when (one-window-p) (split-window-horizontally))
+  (other-window 1))
+(keyboard-translate ?\C-h ?\C-?)
+(global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "C-z") 'other-window-or-split)
