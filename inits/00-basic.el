@@ -14,3 +14,12 @@
 (keyboard-translate ?\C-h ?\C-?)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "C-z") 'other-window-or-split)
+(global-set-key (kbd "C-c r") 'query-replace)
+(defalias 'qrr 'query-replace-regexp)
+
+(setq desktop-globals-to-save '(extended-command-history))
+(setq desktop-files-not-to-save "")
+(desktop-save-mode 1)
+
+(require 'wdired)
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
