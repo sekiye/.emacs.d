@@ -1,0 +1,6 @@
+(require 'yasnippet)
+(require 'helm-c-yasnippet)
+(setq helm-c-yas-space-match-any-greedy t)
+(global-set-key (kbd "C-c y") 'helm-c-yas-complete)
+(yas--initialize)
+(yas-load-directory "~/.emacs.d/snippets/")
