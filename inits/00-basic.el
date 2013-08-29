@@ -1,4 +1,3 @@
-(display-time)
 (line-number-mode 1)
 (column-number-mode 1)
 (show-paren-mode 1)
