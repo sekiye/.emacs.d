@@ -713,6 +713,9 @@
  (splitter .
 	   [(20130705 50)
 	    nil "Manage window splits [github]" single])
+ (speechd-el .
+	     [(20130828 2109)
+	      nil "Client to speech synthesizers and Braille displays. [git]" tar])
  (sparql-mode .
 	      [(20130702 1410)
 	       nil "Edit and interactively evaluate SPARQL queries. [github]" single])
@@ -1390,7 +1393,7 @@
 	   [(20101125 1955)
 	    nil "A simple interface to the www.pastebin.com webservice [wiki]" single])
  (paste-kde .
-	    [(20130702 1055)
+	    [(20130828 2120)
 	     ((web
 	       (0 3 6)))
 	     "paste text to KDE's pastebin service [github]" single])
@@ -4273,6 +4276,9 @@
 	  ((web
 	    (0 3 7)))
 	  "Client for Jenkins [github]" tar])
+ (busybee-theme .
+		[(20130828 1844)
+		 nil "port of vim's mustang theme [github]" single])
  (buster-snippets .
 		  [(20130714 1440)
 		   nil "Yasnippets for the Buster javascript testing framework [github]" tar])
