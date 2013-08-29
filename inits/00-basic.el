@@ -1,6 +1,11 @@
 (display-time)
 (line-number-mode 1)
 (column-number-mode 1)
+(show-paren-mode 1)
+(menu-bar-mode -1)
+
+(setq use-dialog-box nil)
+(defalias 'message-box 'message)
 
 (defun other-window-or-split ()
   (interactive)
