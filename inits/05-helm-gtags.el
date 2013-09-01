@@ -5,9 +5,8 @@
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 
 ;; customize
-(setq helm-gtags-path-style 'relative)
+(setq helm-gtags-path-style 'root)
 (setq helm-gtags-ignore-case t)
-(setq helm-gtags-read-only t)
 (setq helm-gtags-auto-update t)
 
 ;; key bindings
