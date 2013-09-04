@@ -27,4 +27,6 @@
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
+(setq truncate-partial-width-windows t)
+
 (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
