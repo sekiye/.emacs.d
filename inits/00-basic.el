@@ -17,7 +17,6 @@
 (global-set-key (kbd "C-z") 'other-window-or-split)
 (global-set-key (kbd "C-c r") 'query-replace)
 
-(defalias 'qrr 'query-replace-regexp)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq desktop-globals-to-save '(extended-command-history))
@@ -30,3 +29,16 @@
 (setq truncate-partial-width-windows t)
 
 (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
+
+;;; isearch
+(defadvice isearch-mode (around isearch-mode-default-string (forward &optional regexp op-fun recursive-edit word-p) activate)
+  (if (and transient-mark-mode mark-active (not (eq (mark) (point))))
+      (progn
+        (isearch-update-ring (buffer-substring-no-properties (mark) (point)))
+        (deactivate-mark)
+        ad-do-it
+        (if (not forward)
+            (isearch-repeat-backward)
+          (goto-char (mark))
+          (isearch-repeat-forward)))
+    ad-do-it))
