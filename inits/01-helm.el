@@ -6,3 +6,5 @@
 (global-set-key (kbd "C-M-z") 'helm-resume)
 (define-key isearch-mode-map (kbd "C-o") 'helm-occur-from-isearch)
 
+(global-set-key (kbd "C-M-o") 'helm-occur)
+(define-key isearch-mode-map (kbd "C-o") 'helm-occur-from-isearch)

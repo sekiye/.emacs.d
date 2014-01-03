@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads nil nil ("recentf-ext-pkg.el" "recentf-ext.el")
-;;;;;;  (21022 44546 502092 478000))
+;;;;;;  (21190 40151 104556 0))
 
 ;;;***
 
