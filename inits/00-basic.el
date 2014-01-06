@@ -10,7 +10,7 @@
 
 (defun other-window-or-split ()
   (interactive)
-  (when (one-window-p) (split-window-horizontally))
+  (when (one-window-p) (split-window-horizontally (/ (+ (frame-width) 1) 2)))
   (other-window 1))
 (keyboard-translate ?\C-h ?\C-?)
 (global-set-key (kbd "M-g") 'goto-line)
