@@ -1,7 +1,5 @@
-(tool-bar-mode -1)
-(setq ns-command-modifier (quote meta))
-
 (setq flycheck-clang-include-path '("."))
-(setq flycheck-clang-language-standard "c++11")
+(setq flycheck-clang-language-standard nil)
+(require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (global-set-key (kbd "M-n") 'flycheck-next-error)

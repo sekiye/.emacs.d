@@ -1,5 +1,0 @@
-(setq flycheck-clang-include-path '("."))
-(setq flycheck-clang-language-standard "c++11")
-(require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(global-set-key (kbd "M-n") 'flycheck-next-error)
