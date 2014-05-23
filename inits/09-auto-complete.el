@@ -2,4 +2,5 @@
 (ac-config-default)
 
 (require 'ac-helm)
-(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
+(global-set-key (kbd "C-o") 'ac-complete-with-helm)
+(define-key ac-complete-mode-map (kbd "C-o") 'ac-complete-with-helm)
