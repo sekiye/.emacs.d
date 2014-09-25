@@ -1,4 +1,4 @@
-(setq flycheck-clang-include-path '("."))
+(setq flycheck-clang-include-path (list "." "../../include"))
 (setq flycheck-clang-language-standard nil)
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
