@@ -1,5 +1,5 @@
-(setq flycheck-clang-include-path (list "." "../../include"))
-(setq flycheck-clang-language-standard nil)
+(setq flycheck-clang-include-path (list "." "../../include" "include" "/usr/local/include/compute" "/usr/local/cuda/include"))
+(add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (global-set-key (kbd "M-n") 'flycheck-next-error)
