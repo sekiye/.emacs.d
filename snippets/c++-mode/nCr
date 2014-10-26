@@ -1,0 +1,44 @@
+# -*- mode: snippet -*-
+# name: nCr
+# key: nCr
+# --
+// a,b の最大公約数と、ax + by = gcd(a,b) となる x,y を求める
+ll extgcd(ll a, ll b, ll &x, ll &y) {
+  ll g = a;
+  if (b != 0) {
+    g = extgcd(b, a % b, y, x);
+    y -= (a / b) * x;
+  } else {
+    x = 1;
+    y = 0;
+  }
+  return g;
+}
+
+// ax ≡ gcd(a, m) (mod m) となる x を求める
+// a, m が互いに素ならば、関数値は mod m での a の逆数となる
+ll mod_inverse(ll a, ll m) {
+  ll x, y;
+  extgcd(a, m, x, y);
+  return (x % m + m) % m;
+}
+
+// 組み合わせ (r<10^7, n,r<m, m:素数)
+int nCr(int n, int r, int m) {
+  if (n < r) {
+    return 0;
+  }
+  if (n - r < r) {
+    r = n - r;
+  }
+  ll ret = 1;
+  for (int i = 0; i < r; i++) {
+    ret = ret * (n - i) % m;
+  }
+  ll imul = 1;
+  for (int i = 0; i < r; i++) {
+    imul = imul * (i + 1) % m;
+  }
+  ret = ret * mod_inverse(imul, m) % m;
+  return (int)ret;
+}
