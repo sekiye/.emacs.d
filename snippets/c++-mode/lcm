@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: gcd
-# key: gcd
+# name: lcm
+# key: lcm
 # --
 // a > b
 int gcd(int a, int b) {
