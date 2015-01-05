@@ -5,3 +5,5 @@
 (setq flycheck-clang-language-standard "c++11")
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (global-set-key (kbd "M-n") 'flycheck-next-error)
+
+(setq flycheck-clang-include-path (list "." "../../include" "include"))

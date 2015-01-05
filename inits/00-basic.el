@@ -3,6 +3,9 @@
 (show-paren-mode 1)
 (menu-bar-mode -1)
 
+(global-set-key "\C-m" 'electric-newline-and-maybe-indent)
+(global-set-key "\C-j" 'newline)
+
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 (setq use-dialog-box nil)

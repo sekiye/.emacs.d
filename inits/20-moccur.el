@@ -2,3 +2,4 @@
 (require 'moccur-edit)
 (setq moccur-split-word t)
 (setq dmoccur-recursive-search t)
+(bind-key "M-O" 'isearch-moccur-all isearch-mode-map))
