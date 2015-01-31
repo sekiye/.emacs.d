@@ -1,0 +1,39 @@
+# -*- mode: snippet -*-
+# name: bit
+# key: bit
+# --
+static const int MAX_N = 200000;  // TODO
+
+int bit[MAX_N + 1];
+int n;  // TODO
+
+int sum(int i) {
+  int s = 0;
+  while (i > 0) {
+    s += bit[i];
+    i -= i & -i;
+  }
+  return s;
+}
+
+void add(int i, int x) {
+  while (i <= n) {
+    bit[i] += x;
+    i += i & -i;
+  }
+}
+
+// 1 or 0のみが含まれるbitのときに、i番目の1を求める
+int find(int i) {
+  int lo = 0;
+  int hi = n;
+  while(lo + 1 < hi){
+    int mid = (lo + hi) / 2;
+    if(sum(mid) < i) {
+      lo = mid;
+    } else {
+      hi = mid;
+    }
+  }
+  return lo;
+}
