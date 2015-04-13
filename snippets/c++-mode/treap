@@ -1,0 +1,139 @@
+# -*- mode: snippet -*-
+# name: treap
+# key: treap
+# --
+template<typename T>
+class Treap {
+ public:
+  Treap() : root_(nullptr) {
+  }
+
+  void Insert(int k, T v) {
+    root_ = insert(root_, k, v, rand());
+  }
+  
+  void Shift(int l, int r) {
+    root_ = shift(root_, l, r + 1);
+  }
+
+  T Min(int l, int r) {
+    return min(root_, l, r + 1);
+  }
+
+  void Update(int k, T v) {
+    root_ = erase(root_, k);
+    root_ = insert(root_, k, v, rand());
+  }
+
+ private:
+  static const T INF = 10000001;  // TODO
+
+  struct node_t {
+    T val;
+    node_t *lch;
+    node_t *rch;
+    double pri;
+    int cnt;
+    T sum;
+    T min;
+
+    node_t(int v, double p) : val(v), pri(p), cnt(1), sum(v), min(v) {
+      lch = nullptr;
+      rch = nullptr;
+    }
+  };
+
+  int count(node_t *t) {
+    return !t ? 0 : t->cnt;
+  }
+
+  int sum(node_t *t) {
+    return !t ? 0 : t->sum;
+  }
+
+  int min(node_t *t) {
+    return !t ? INF : t->min;
+  }
+
+  node_t *update(node_t *t) {
+    t->cnt = count(t->lch) + count(t->rch) + 1;
+    t->sum = sum(t->lch) + sum(t->rch) + t->val;
+    t->min = std::min(std::min(min(t->lch), min(t->rch)), t->val);
+    return t;
+  }
+
+  node_t *merge(node_t *l, node_t *r) {
+    if (!l) {
+      return r;
+    } else if (!r) {
+      return l;
+    }
+
+    if (l->pri > r->pri) {
+      l->rch = merge(l->rch, r);
+      return update(l);
+    } else {
+      r->lch = merge(l, r->lch);
+      return update(r);
+    }
+  }
+
+  pair<node_t *, node_t *> split(node_t *t, int k) {  // [0, k), [k, n)
+    if (!t)
+      return make_pair(nullptr, nullptr);
+
+    if (k <= count(t->lch)) {
+      auto s = split(t->lch, k);
+      t->lch = s.second;
+      return make_pair(s.first, update(t));
+    } else {
+      auto s = split(t->rch, k - count(t->lch) - 1);
+      t->rch = s.first;
+      return make_pair(update(t), s.second);
+    }
+  }
+
+  node_t *insert(node_t *t, int k, int val, double pri) {
+    auto s = split(t, k);
+    node_t *n = new node_t(val, pri);
+    return merge(merge(s.first, n), s.second);
+  }
+
+  node_t *erase(node_t *t, int k) {
+    auto s = split(t, k);
+    auto u = split(s.second, 1);
+    delete u.first;
+    return merge(s.first, u.second);
+  }
+
+  node_t *shift(node_t *t, int l, int r) {
+    auto c = split(t, r);
+    auto b = split(c.first, r - 1);
+    auto a = split(b.first, l);
+    return merge(merge(a.first, b.second), merge(a.second, c.second));
+  }
+
+  int min(node_t *t, int l, int r) {
+    if (!t) return INF;
+    if (l <= 0 && count(t) <= r) return min(t);
+    if (r <= 0 || count(t) <= l) return INF;
+
+    int l_min = min(t->lch, l, r);
+    int r_min = min(t->rch, l - count(t->lch) - 1, r - count(t->lch) - 1);
+    int ans = std::min(l_min, r_min);
+    if (l <= count(t->lch) && count(t->lch) < r) {
+      ans = std::min(ans, t->val);
+    }
+    return ans;
+  }
+
+  string print(node_t *t) {
+    if (!t) return "";
+    string s = print(t->lch);
+    s += to_string(t->val) + " ";
+    s += print(t->rch);
+    return s;
+  }
+
+  node_t *root_;
+};
