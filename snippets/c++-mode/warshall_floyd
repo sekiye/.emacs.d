@@ -1,0 +1,30 @@
+# -*- mode: snippet -*-
+# name: warshall_floyd
+# key: warshall_floyd
+# --
+static const int INF = std::numeric_limits<int>::max() / 3;
+static const int MAX_V = 500;  // TODO
+
+int d[MAX_V][MAX_V];
+int V;  // TODO
+
+void warshall_floyd() {
+  for (int k = 0; k < V; k++) {
+    for (int j = 0; j < V; j++) {
+      for (int i = 0; i < V; i++) {
+        d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+      }
+    }
+  }
+}
+
+void init() {
+  for (int j = 0; j < MAX_V; j++) {
+    for (int i = 0; i < MAX_V; i++) {
+      d[j][i] = INF;
+    }
+  }
+  for (int i = 0; i < MAX_V; i++) {
+    d[i][i] = 0;
+  }
+}
