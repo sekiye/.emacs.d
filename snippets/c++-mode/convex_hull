@@ -22,6 +22,13 @@ double distance(const Point &a, const Point &b) {
   return abs(a - b);
 }
 
+// 線分ABと点Cとの距離
+double distance_ab_c(Point a, Point b, Point c) {
+  if (dot(b - a, c - a) < EPS) return abs(c - a);
+  if (dot(a - b, c - b) < EPS) return abs(c - b);
+  return abs(cross(b - a, c - a)) / abs(b - a);
+}
+
 int ccw(Point a, Point b, Point c) {
   b -= a; c -= a;
   if (cross(b, c) > 0)   return +1;       // counter clockwise
@@ -31,6 +38,7 @@ int ccw(Point a, Point b, Point c) {
   return 0;
 }
 
+// 凸包
 vector<Point> convex_hull(vector<Point> ps) {
   int n = ps.size();
   int k = 0;
@@ -44,6 +52,7 @@ vector<Point> convex_hull(vector<Point> ps) {
   return move(ch);
 }
 
+// 外周の長さ
 double periphery(const vector<Point> &v) {
   double l = 0;
   for (int i = 0; i < (int)v.size(); i++) {
